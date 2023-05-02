@@ -1,0 +1,253 @@
+:root {
+  --doc-height: 100%;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh; /* fallback for Js load */
+  height: var(--doc-height);
+}
+html {
+  /* fixes ios chrome rotate bug: */
+  height: -webkit-fill-available;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  /* fixes ios chrome rotate bug: */
+  /* min-height: 100vh; */
+  min-height: -webkit-fill-available;
+  /* background-color: #ffffff; */
+  background-color: #fcfcfd;
+  /* background-color: #fcfcfa; */
+  /* background-color: #fafafa; */
+  /* background-color: #f8f9fa; */
+  /* background-color: #eeeeee; */
+}
+main {
+  margin-bottom: 0.5em;
+}
+footer {
+  margin-top: auto;
+  padding: 0.6875em 0.75em;
+  font-size: 0.9em;
+  background-color: #050505;
+}
+.ad-img {
+  border-radius: 0.4em;
+  border: 0.2em;
+  border-style: solid;
+  /* border-color: #eeeeee; */
+  border-color: #333333;
+  width: 100%;
+}
+.container {
+  padding: 0 1em;
+  max-width: 44.875em;
+}
+.chartTest {
+  padding-top: 5em;
+  max-width: 50.25em;
+}
+.form-container {
+  /* margin: 0em auto; */
+  max-width: 32em;
+  background-color: #eeeeee;
+  border-radius: 0.4em;
+  padding: 1.6em;
+}
+.pre-qual-form-container {
+  padding: 1.6em;
+}
+.navbar {
+  /* background-color: #000000  */
+  background-color: #050505;
+  /* background-color: #0c0c0c  */
+  /* background-color: #111111   */
+  /* background-color: #222222   */
+  /* background-color: #333333   */
+}
+.navbar {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 0.3em;
+  padding-right: 0em;
+}
+.navbar-brand {
+  padding-left: 0.2em;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+.nav-link {
+  padding: 0.37rem !important;
+}
+.nav-link:hover,
+.nav-link:active,
+footer a:hover,
+footer a:active {
+  color: #c9c9c9 !important;
+}
+.navbar-nav {
+  font-size: 0.69em;
+}
+.table > :not(caption) > * > * {
+  padding: 0.25em !important;
+}
+.terms {
+  width: 90%;
+}
+.termsCheckbox {
+  width: 10%;
+}
+.transaction-table {
+  font-size: 0.86em;
+}
+/* xxxxxxxxxxxxxx */
+/* xxxxxxxxxxxxxx */
+/* xxxxxxxxxxxxxx */
+@media (max-width: 23.4375em) {
+  .terms {
+    padding-top: 0.5em;
+  }
+  .termsCheckbox {
+    margin-top: 5em;
+    padding-top: 0.8em;
+    padding-left: 0.6em;
+  }
+}
+@media (min-width: 23.5em) {
+  .termsCheckbox {
+    margin-top: 2.8em;
+  }
+}
+@media (min-width: 24em) {
+  .nav-link {
+    padding: 0.5rem !important;
+  }
+  .navbar-nav {
+    font-size: 0.9em;
+  }
+}
+@media (max-width: 24.75em) {
+  h1 {
+    font-size: 1.3em;
+  }
+}
+@media (min-width: 36em) {
+  .login-button {
+    flex: 1.1;
+  }
+  .pre-qual-button {
+    flex: 1.3;
+  }
+  .register-button {
+    flex: 1;
+  }
+}
+/* xxxxxxxxxxxxxx */
+/* xxxxxxxxxxxxxx */
+/* xxxxxxxxxxxxxx */
+/* tablet / desktop breakpoint */
+@media (min-width: 48em) {
+  .container {
+    padding: 0 2em;
+    max-width: 86em;
+  }
+
+  #footer {
+    text-align: left !important;
+    font-size: 0.8em;
+  }
+  .footer-container {
+    max-width: 105em;
+  }
+  .form-col {
+    flex: 1;
+  }
+  .form-container {
+    max-width: 36em;
+    background-color: #eeeeee;
+    border-radius: 0.4em;
+    padding: 1.8em;
+  }
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .navbar-brand {
+    font-size: 1.25em;
+  }
+  .navbar-nav {
+    font-size: 1em;
+    font-weight: 500;
+  }
+  .table > :not(caption) > * > * {
+    padding: 0.5em !important;
+  }
+  .terms {
+    padding-top: 8px;
+  }
+  .termsCheckbox {
+    margin-top: 1em;
+    padding-top: 2em;
+    padding-left: 1.4em;
+  }
+  .transaction-table {
+    font-size: 1em;
+  }
+  .welcome-headers {
+    margin: 2em auto;
+  }
+  .welcome-divs {
+    max-width: 58.4375em;
+    margin: auto;
+    padding: 1em;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+  }
+  .welcome-group {
+    background-color: #eeeeee;
+    margin: 1em 0em;
+    border-radius: 0.4em;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .welcome-text {
+    padding: 0 0.5em;
+  }
+  .welcome-buttons {
+    /* margin-top: 10px; */
+    padding: 0 4.5em;
+  }
+  .welcome-advertisement {
+    padding: 1em;
+    min-width: 50%;
+  }
+  .login-button {
+    flex: 0 1 auto;
+  }
+  .pre-qual-button {
+    flex: 0 1 auto;
+  }
+  .register-button {
+    flex: 0 1 auto;
+  }
+}
+/* xxxxxxxxxxxxxx */
+/* xxxxxxxxxxxxxx */
+/* xxxxxxxxxxxxxx */
+@media (min-width: 50.75em) {
+  .welcome-text {
+    padding: 0 2.2em 0 3.2em;
+  }
+}
+@media (min-width: 62em) {
+}
+@media (min-width: 75em) {
+}
+@media (min-width: 87.5em) {
+}
