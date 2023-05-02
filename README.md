@@ -7,6 +7,7 @@ Upon completion of the semester, I took the time to learn how to connect the cli
 
 Features:
 
+Regex form validation  
 Login/logout via LocalStorage  
 Storage of transaction data via MongoDB  
 Real-time updating transaction list/balance info/Chart.js via AJAX API calls to Express server  
