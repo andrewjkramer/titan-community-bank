@@ -7,10 +7,15 @@ Upon completion of the semester, I took the time to learn how to connect the cli
 
 Features:
 
-Regex form validation  
-Login/logout via LocalStorage  
-Storage of transaction data via MongoDB  
-Real-time updating transaction list/balance info/Chart.js via AJAX API calls to Express server
+- Regex form validation  
+- Login/logout via LocalStorage  
+- Storage of transaction data via MongoDB  
+- Real-time updating transaction list/balance info/Chart.js via AJAX API calls to Express server
+
+Future improvements:
+
+- Multi-user sessions -- as of now all users share the same transaction data due to LocalStorage
+- Possibly rebuild with React
 
 Local installation:
 
