@@ -14,7 +14,7 @@ Real-time updating transaction list/balance info/Chart.js via AJAX API calls to 
 
 Local installation:
 
-1. Insert your MongoDB URI key into server.js line 31  
+1. Insert your MongoDB URI key into app/server.js line 31  
 2. Terminal: npm install  
 3. Terminal: npm start  
 
