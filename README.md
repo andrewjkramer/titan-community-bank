@@ -1,5 +1,5 @@
 # titan-community-bank
-Titan Community Bank is a full-stack project that uses Node.js with Express, and MongoDB.
+Titan Community Bank is a full stack project that uses Node.js with Express, and MongoDB.
 
 It began as two separate semester-long JavaScript projects built during COP 2803 Client-Side JavaScript and COP 2844 Server-Side JavaScript at St. Petersburg College.
 
