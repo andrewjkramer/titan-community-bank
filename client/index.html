@@ -113,18 +113,19 @@
             </div>
           </div>
           <!-- advertisement -->
-          <div id="image-cache" style="display: none">
+          <!-- use image cache if using gif style rotating banner seen in index.js script -->
+          <!-- <div id="image-cache" style="display: none">
             <img src="/img/atm.jpg" />
             <img src="/img/bankapp.jpg" />
             <img src="/img/bankgraph.jpg" />
             <img src="/img/safedeposit.jpg" />
             ...
+          </div> -->
+          <div class="welcome-advertisement" id="ad-container">
+            <a href="" onclick="return false" rel="nofollow"
+              ><img src="img/banking.gif" class="ad-img"
+            /></a>
           </div>
-          <div
-            class="welcome-advertisement"
-            id="ad-container"
-            onclick="return false"
-          ></div>
         </div>
       </div>
     </main>
@@ -154,6 +155,7 @@
       </div>
     </footer>
     <script src="js/utilities.js" async></script>
-    <script src="js/index.js" async></script>
+    <!-- index.js script currently commented out - using literal gif instead of JS based rotating banner -->
+    <!-- <script src="js/index.js" async></script> -->
   </body>
 </html>

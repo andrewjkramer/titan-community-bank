@@ -60,6 +60,7 @@
                     id="first_name"
                     name="first_name"
                     placeholder="First Name"
+                    autocomplete="given-name"
                   />
                   <span
                     id="first_name_error"
@@ -77,6 +78,7 @@
                     id="last_name"
                     name="last_name"
                     placeholder="Last Name"
+                    autocomplete="family-name"
                   />
                   <span
                     id="last_name_error"
@@ -96,6 +98,7 @@
                     id="city"
                     name="city"
                     placeholder="City"
+                    autocomplete="address-level2"
                   />
                   <span
                     id="city_error"
@@ -107,7 +110,12 @@
                 <!-- state -->
                 <div class="form-col">
                   <label class="p-2 px-3" for="state">State:</label>
-                  <select class="form-select" id="state" name="state">
+                  <select
+                    class="form-select"
+                    id="state"
+                    name="state"
+                    autocomplete="off"
+                  >
                     <option value="">Select a State</option>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
@@ -179,6 +187,7 @@
                     minlength="5"
                     maxlength="10"
                     placeholder="Zip Code"
+                    autocomplete="postal-code"
                   />
                   <span
                     id="zip_code_error"
@@ -200,6 +209,7 @@
                     id="gross_income"
                     name="gross_income"
                     placeholder="Gross Income"
+                    autocomplete="off"
                   />
                   <span
                     id="gross_income_error"
@@ -221,6 +231,7 @@
                     minlength="4"
                     maxlength="4"
                     placeholder="****"
+                    autocomplete="off"
                   />
                   <span
                     id="ssn_error"
@@ -242,6 +253,7 @@
                     id="email_address"
                     name="email_address"
                     placeholder="example@example.com"
+                    autocomplete="email"
                   />
                   <span
                     id="email_address_error"
@@ -261,6 +273,7 @@
                     id="email_address1"
                     name="email_address1"
                     placeholder="example@example.com"
+                    autocomplete="off"
                   />
                   <span
                     id="email_address1_error"
