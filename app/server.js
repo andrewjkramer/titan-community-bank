@@ -10,16 +10,22 @@ const app = express();
 
 const mongoose = require("mongoose");
 
-const cors = require("cors");
+// CORS was enabled for API development purposes before merging the front end with the back end.
+// It is not currently being used.
 
-const corsOptions = {
-  origin: "*",
-  credentials: true, //access-control-allow-credentials:true
-  optionSuccessStatus: 200,
-};
+// const cors = require("cors");
+
+// Define the middleware for the CORS policy. Set the origin to "*" to allow all origin requests.
+// Currently set to allow all requests for development purposes.
+
+// const corsOptions = {
+//   origin: "*", // -- to discover the origin you need, disable this and run the app, then check the devtools console for the origin that was blocked.
+//   // credentials: true, //access-control-allow-credentials:true
+//   optionSuccessStatus: 200,
+// };
 
 // Define the middleware for the CORS policy.
-app.use(cors(corsOptions)); // Use this after the variable declaration
+// app.use(cors(corsOptions)); // Use this after the variable declaration
 
 // Establish the port for the server to listen for requests.
 // Currently configured per Heroku specs.
