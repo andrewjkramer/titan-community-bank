@@ -7,6 +7,7 @@ Upon completion of the semester, I took the time to learn how to connect the cli
 
 Features:
 
+- Node.js back end  
 - Regex form validation  
 - Login/logout via LocalStorage  
 - Storage of transaction data via MongoDB  
