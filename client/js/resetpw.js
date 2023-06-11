@@ -4,22 +4,26 @@
 
 //
 
-var resetPW = function () {
-  var isValid = true;
+const resetPW = function () {
+  let isValid = true;
 
-  var required = "This field is required.";
+  const required = "This field is required.";
 
-  var required2 = "This entry must equal first entry.";
+  const required2 = "This entry must equal first entry.";
 
   // get values
 
-  var username = $("username").value.toLowerCase();
+  let username = $("username").value.toLowerCase();
 
-  // var pwd = $("pwd").value;
+  let username1 = "";
 
-  var newPwd = $("new_pwd").value;
+  let user = "";
 
-  var newPwd1 = $("new_pwd1").value;
+  // let pwd = $("pwd").value;
+
+  let newPwd = $("new_pwd").value;
+
+  let newPwd1 = $("new_pwd1").value;
 
   // test input and setup localStorage
 
@@ -35,9 +39,9 @@ var resetPW = function () {
 
       isValid = false;
     } else {
-      var user = JSON.parse(localStorage.getItem(username));
+      user = JSON.parse(localStorage.getItem(username));
 
-      var username1 = user["username1"];
+      username1 = user["username1"];
 
       $("username_error").firstChild.nodeValue = "";
     }
@@ -55,7 +59,7 @@ var resetPW = function () {
 
   //     isValid = false;
   //   } else {
-  //     var pwd1 = user["pwd1"];
+  //      pwd1 = user["pwd1"];
 
   //     $("pwd_error").firstChild.nodeValue = "";
   //   }
@@ -137,7 +141,7 @@ var resetPW = function () {
   // if all valid....
 
   if (isValid == true) {
-    var user = {
+    user = {
       username1: username,
 
       pwd1: newPwd1,
@@ -149,7 +153,7 @@ var resetPW = function () {
   }
 };
 
-var resetForms = function () {
+const resetForms = function () {
   resetForm();
 
   $("username").focus();

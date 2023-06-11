@@ -8,7 +8,7 @@
 // banner rotates on page load/refresh
 ////////////////////////////////////////////////
 
-var banner = [
+const banner = [
   ["#", "./img/atm.jpg"],
   ["#", "./img/bankapp.jpg"],
   ["#", "./img/bankgraph.jpg"],
@@ -16,7 +16,7 @@ var banner = [
 ];
 
 function shuffle(a) {
-  var j, x, i;
+  let j, x, i;
 
   for (i = a.length - 1; i > 0; i--) {
     j = Math.floor(Math.random() * (i + 1));
@@ -30,12 +30,12 @@ function shuffle(a) {
 
 shuffle(banner);
 
-var a = document.createElement("a");
+const a = document.createElement("a");
 a.href = banner[0][0];
 a.target = "";
 a.rel = "nofollow";
 
-var img = document.createElement("img");
+const img = document.createElement("img");
 img.className = "ad-img";
 img.src = banner[0][1];
 img.alt = "300x250 Banner Ad";
@@ -47,8 +47,8 @@ document.getElementById("ad-container").appendChild(a);
 // gif style constant rotating banner
 ////////////////////////////////////////////////
 
-// var adContainer = document.getElementById("ad-container");
-// var currentBannerIndex = 0;
+// const adContainer = document.getElementById("ad-container");
+// let currentBannerIndex = 0;
 
 // function changeBanner() {
 //   currentBannerIndex++;
@@ -56,12 +56,12 @@ document.getElementById("ad-container").appendChild(a);
 //     currentBannerIndex = 0;
 //   }
 
-//   var a = document.createElement("a");
+//   let a = document.createElement("a");
 //   a.href = banner[currentBannerIndex][0];
 //   a.target = "";
 //   a.rel = "nofollow";
 
-//   var img = document.createElement("img");
+//   let img = document.createElement("img");
 //   img.className = "ad-img";
 //   img.src = banner[currentBannerIndex][1];
 //   img.alt = "300x250 Banner Ad";

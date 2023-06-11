@@ -4,9 +4,9 @@
 
 //
 
-var transactions = [];
+let transactions = [];
 
-var categories = [
+const categories = [
   "Shopping",
   "Uncategorized",
   // "Credit",
@@ -21,20 +21,21 @@ var categories = [
 ];
 
 function renderChart(transactions) {
-  var categoryTotals = {};
-  for (var i = 0; i < categories.length; i++) {
+  let categoryTotals = {};
+  let i = 0;
+  for (i = 0; i < categories.length; i++) {
     categoryTotals[categories[i]] = 0;
   }
 
-  for (var i = 0; i < transactions.length; i++) {
-    var transaction = transactions[i];
-    var category = transaction.Category;
-    var amount = parseFloat(transaction.Amount["$numberDecimal"]);
+  for (i = 0; i < transactions.length; i++) {
+    let transaction = transactions[i];
+    let category = transaction.Category;
+    let amount = parseFloat(transaction.Amount["$numberDecimal"]);
 
     categoryTotals[category] += -amount;
   }
 
-  var ctx = document.getElementById("myChart").getContext("2d");
+  const ctx = document.getElementById("myChart").getContext("2d");
 
   new Chart(ctx, {
     type: "pie",
@@ -77,19 +78,20 @@ function renderChart(transactions) {
 }
 
 window.onload = function () {
-  var xmlhttp = new XMLHttpRequest();
+  const xmlhttp = new XMLHttpRequest();
 
   xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      var transactions = JSON.parse(this.responseText);
+      transactions = JSON.parse(this.responseText);
 
       renderChart(transactions);
     }
   };
-  xmlhttp.open(
-    "GET",
-    "https://titancommunitybank.herokuapp.com/transactions",
-    true
-  );
+  // xmlhttp.open(
+  //   "GET",
+  //   "https://titancommunitybank.herokuapp.com/transactions",
+  //   true
+  // );
+  xmlhttp.open("GET", "http://localhost:5000/transactions", true);
   xmlhttp.send();
 };

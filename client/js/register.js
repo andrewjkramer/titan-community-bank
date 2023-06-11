@@ -4,32 +4,36 @@
 
 //
 
-var register = function () {
-  var isValid = true;
+const register = function () {
+  let isValid = true;
 
-  var required = "This field is required.";
+  const required = "This field is required.";
 
-  var header = "";
+  let header = "";
 
-  var html = "";
+  // let html = "";
 
-  var requiredSpan = "<span>This field is required.<span>";
+  const requiredSpan = "<span>This field is required.<span>";
 
-  var requiredSpan2 = "<span>This entry must equal first entry.<span>";
+  const requiredSpan2 = "<span>This entry must equal first entry.<span>";
 
-  var msg = "Please review your entries and complete all required fields.";
+  const msg = "Please review your entries and complete all required fields.";
 
   // get username values
 
-  var emailAddress = $("email_address").value.toLowerCase();
+  let emailAddress = $("email_address").value.toLowerCase();
 
-  var emailAddress1 = $("email_address1").value.toLowerCase();
+  let emailAddress1 = $("email_address1").value.toLowerCase();
 
-  var emailX = emailAddress;
+  let username1 = "";
+
+  let user = "";
+
+  let emailX = emailAddress;
 
   ///////////////////////////////////////////////////////////////////////////////////////////////
 
-  var userExist = JSON.parse(localStorage.getItem(emailX));
+  let userExist = JSON.parse(localStorage.getItem(emailX));
 
   // check for if username already exists
 
@@ -45,9 +49,9 @@ var register = function () {
 
   // get password values
 
-  var pwd = $("pwd").value;
+  let pwd = $("pwd").value;
 
-  var pwd1 = $("pwd1").value;
+  let pwd1 = $("pwd1").value;
 
   // validate
 
@@ -127,9 +131,9 @@ var register = function () {
   // if all valid....
 
   if (isValid == true) {
-    var username1 = emailAddress;
+    username1 = emailAddress;
 
-    var user = {
+    user = {
       username1: emailAddress,
 
       pwd1: pwd1,
@@ -141,7 +145,7 @@ var register = function () {
   }
 };
 
-var resetForms = function () {
+const resetForms = function () {
   resetForm();
 
   $("email_address").focus();

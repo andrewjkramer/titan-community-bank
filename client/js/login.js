@@ -4,16 +4,22 @@
 
 //
 
-var login = function () {
-  var isValid = true;
+const login = function () {
+  let isValid = true;
 
-  var required = "This field is required.";
+  const required = "This field is required.";
 
   // get values
 
-  var username = $("username").value.toLowerCase();
+  let username = $("username").value.toLowerCase();
 
-  var pwd = $("pwd").value;
+  let pwd = $("pwd").value;
+
+  let user = "";
+
+  let username1 = "";
+
+  let pwd1 = "";
 
   // test input and setup localStorage
 
@@ -29,9 +35,9 @@ var login = function () {
 
       isValid = false;
     } else {
-      var user = JSON.parse(localStorage.getItem(username));
+      user = JSON.parse(localStorage.getItem(username));
 
-      var username1 = user["username1"];
+      username1 = user["username1"];
 
       $("username_error").firstChild.nodeValue = "";
     }
@@ -49,7 +55,7 @@ var login = function () {
 
       isValid = false;
     } else {
-      var pwd1 = user["pwd1"];
+      pwd1 = user["pwd1"];
 
       $("pwd_error").firstChild.nodeValue = "";
     }
@@ -92,7 +98,7 @@ var login = function () {
   }
 };
 
-var resetForms = function () {
+const resetForms = function () {
   resetForm();
 
   $("username").focus();

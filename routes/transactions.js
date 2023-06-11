@@ -8,7 +8,7 @@ const router = express.Router();
 
 const Transaction = require("../models/transaction");
 
-var transactionsX = "";
+let transactionsX = "";
 
 // Define the function to get the transactions.
 function getTransactions(transactions) {

@@ -4,42 +4,42 @@
 
 //
 
-var prequalify = function () {
-  var isValid = true;
+const prequalify = function () {
+  let isValid = true;
 
-  var required = "This field is required.";
+  const required = "This field is required.";
 
-  var header = "";
+  let header = "";
 
-  var html = "";
+  // let html = "";
 
-  var requiredSpan = "<span>This field is required.<span>";
+  const requiredSpan = "<span>This field is required.<span>";
 
-  var requiredSpan2 = "<span>This entry must equal first entry.<span>";
+  const requiredSpan2 = "<span>This entry must equal first entry.<span>";
 
-  var msg = "Please review your entries and complete all required fields.";
+  const msg = "Please review your entries and complete all required fields.";
 
   // get values
 
-  var emailAddress = $("email_address").value;
+  let emailAddress = $("email_address").value;
 
-  var emailAddress1 = $("email_address1").value;
+  let emailAddress1 = $("email_address1").value;
 
-  var firstName = $("first_name").value;
+  let firstName = $("first_name").value;
 
-  var lastName = $("last_name").value;
+  let lastName = $("last_name").value;
 
-  var city = $("city").value;
+  let city = $("city").value;
 
-  var state = $("state").value;
+  let state = $("state").value;
 
-  var zipCode = $("zip_code").value;
+  let zipCode = $("zip_code").value;
 
-  var grossIncome = $("gross_income").value;
+  let grossIncome = $("gross_income").value;
 
-  var ssn = $("ssn").value;
+  let ssn = $("ssn").value;
 
-  var terms_and_conditions = $("terms_and_conditions").checked;
+  let terms_and_conditions = $("terms_and_conditions").checked;
 
   // validate
 
@@ -214,7 +214,7 @@ var prequalify = function () {
   }
 };
 
-var resetForms = function () {
+const resetForms = function () {
   resetForm();
 
   $("first_name").focus();

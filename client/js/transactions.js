@@ -4,13 +4,13 @@
 
 //
 
-var today = new Date();
+let today = new Date();
 
-var dd = String(today.getDate()).padStart(2, "0");
+let dd = String(today.getDate()).padStart(2, "0");
 
-var mm = String(today.getMonth() + 1).padStart(2, "0");
+let mm = String(today.getMonth() + 1).padStart(2, "0");
 
-var yyyy = today.getFullYear();
+let yyyy = today.getFullYear();
 
 today = mm + "/" + dd + "/" + yyyy;
 
@@ -30,10 +30,10 @@ class Transaction {
   }
 }
 
-var transactions = [];
+let transactions = [];
 
 function displayTransactions(transactions) {
-  // var transactionsObj = transactions;
+  // let transactionsObj = transactions;
 
   $("transactionRows").innerHTML = transactions
 
@@ -57,11 +57,11 @@ function displayTransactions(transactions) {
     .join("");
 }
 
-var availableBalance = 0;
+let availableBalance = 0;
 
 function displayAvailableBalance(transactions) {
   transactions.forEach(function (transaction) {
-    // var transactionType = transaction.Type;
+    // let transactionType = transaction.Type;
 
     if (transaction.Type == "Credit") {
       availableBalance += +transaction.Amount["$numberDecimal"];
@@ -105,7 +105,7 @@ function withdrawal() {
 
     return;
   } else {
-    var withdrawalAmount = parseFloat(
+    let withdrawalAmount = parseFloat(
       prompt("How much would you like to withdrawal? ")
     );
 
@@ -150,7 +150,7 @@ function withdrawal() {
         );
       }
 
-      var transaction = new Transaction(
+      const transaction = new Transaction(
         `${today}`,
         `Withdrawal`,
         `Uncategorized`,
@@ -158,13 +158,14 @@ function withdrawal() {
         "-" + withdrawalAmount
       );
 
-      var xmlhttp = new XMLHttpRequest();
+      let xmlhttp = new XMLHttpRequest();
 
-      xmlhttp.open(
-        "POST",
-        "https://titancommunitybank.herokuapp.com/transactions",
-        true
-      );
+      // xmlhttp.open(
+      //   "POST",
+      //   "https://titancommunitybank.herokuapp.com/transactions",
+      //   true
+      // );
+      xmlhttp.open("POST", "http://localhost:5000/transactions", true);
 
       xmlhttp.setRequestHeader(
         "Content-Type",
@@ -185,11 +186,12 @@ function withdrawal() {
         }
       };
 
-      xmlhttp.open(
-        "GET",
-        "https://titancommunitybank.herokuapp.com/transactions",
-        true
-      );
+      // xmlhttp.open(
+      //   "GET",
+      //   "https://titancommunitybank.herokuapp.com/transactions",
+      //   true
+      // );
+      xmlhttp.open("GET", "http://localhost:5000/transactions", true);
 
       xmlhttp.send();
     }
@@ -197,7 +199,7 @@ function withdrawal() {
 }
 
 function deposit() {
-  var depositAmount = parseFloat(
+  let depositAmount = parseFloat(
     prompt("How much would you like to deposit? ")
   );
 
@@ -253,7 +255,7 @@ function deposit() {
   }
   /////////////////////////////////////////////
 
-  var transaction = new Transaction(
+  const transaction = new Transaction(
     `${today}`,
     `Deposit`,
     `Credit`,
@@ -261,13 +263,14 @@ function deposit() {
     depositAmount
   );
 
-  var xmlhttp = new XMLHttpRequest();
+  let xmlhttp = new XMLHttpRequest();
 
-  xmlhttp.open(
-    "POST",
-    "https://titancommunitybank.herokuapp.com/transactions",
-    true
-  );
+  // xmlhttp.open(
+  //   "POST",
+  //   "https://titancommunitybank.herokuapp.com/transactions",
+  //   true
+  // );
+  xmlhttp.open("POST", "http://localhost:5000/transactions", true);
 
   xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
@@ -285,18 +288,19 @@ function deposit() {
     }
   };
 
-  xmlhttp.open(
-    "GET",
-    "https://titancommunitybank.herokuapp.com/transactions",
-    true
-  );
+  // xmlhttp.open(
+  //   "GET",
+  //   "https://titancommunitybank.herokuapp.com/transactions",
+  //   true
+  // );
+  xmlhttp.open("GET", "http://localhost:5000/transactions", true);
 
   xmlhttp.send();
 }
 
 window.onload = function () {
-  var xmlhttp = new XMLHttpRequest();
-  var transactions;
+  const xmlhttp = new XMLHttpRequest();
+  let transactions;
 
   xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
@@ -308,11 +312,12 @@ window.onload = function () {
     }
   };
 
-  xmlhttp.open(
-    "GET",
-    "https://titancommunitybank.herokuapp.com/transactions",
-    true
-  );
+  // xmlhttp.open(
+  //   "GET",
+  //   "https://titancommunitybank.herokuapp.com/transactions",
+  //   true
+  // );
+  xmlhttp.open("GET", "http://localhost:5000/transactions", true);
 
   xmlhttp.send();
 

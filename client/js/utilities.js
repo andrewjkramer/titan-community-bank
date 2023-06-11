@@ -6,13 +6,13 @@
 
 // getElementbyID function
 
-var $ = function (id) {
+const $ = function (id) {
   return document.getElementById(id);
 };
 
 // resetForm function
 
-var resetForm = function () {
+const resetForm = function () {
   $("form").reset();
 
   const collection = document.getElementsByClassName("form_error");
@@ -26,96 +26,96 @@ var resetForm = function () {
 
 // contact
 
-var emailExp =
+const emailExp =
   /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
 
-var nameExp = /^[a-z ,.'-]+$/i;
+const nameExp = /^[a-z ,.'-]+$/i;
 
 // addresses
 
-var cityExp =
+const cityExp =
   /^[a-zA-Z\u0080-\u024F]+(?:([\ \-\']|(\.\ ))[a-zA-Z\u0080-\u024F]+)*$/i;
 
-var stateExp = /^[a-z ,.'-]+$/i;
+const stateExp = /^[a-z ,.'-]+$/i;
 
-var zipExp = /^[0-9]{5}(?:-[0-9]{4})?$/;
+const zipExp = /^[0-9]{5}(?:-[0-9]{4})?$/;
 
 // misc
 
-var numExp = /^\d+$/;
+const numExp = /^\d+$/;
 
-// var twoDecExp = /^[0-9]*(\.[0-9]{0,2})?$/;
+// const twoDecExp = /^[0-9]*(\.[0-9]{0,2})?$/;
 
-var twoDecExp = /^(?=.*[1-9].*$)\d{0,14}(?:\.\d{0,2})?$/;
+const twoDecExp = /^(?=.*[1-9].*$)\d{0,14}(?:\.\d{0,2})?$/;
 
-var ssnExp = /^\d+$/;
+const ssnExp = /^\d{4}$/;
 
-// var usernameExp = /^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/;
-var usernameExp = /^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]$/;
+// const usernameExp = /^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/;
+const usernameExp = /^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]$/;
 
-var pwdExp = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+const pwdExp = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
 
 // validate library
 
 // contact
 
-var emailTest = function (id) {
+const emailTest = function (id) {
   return emailExp.test(id);
 };
 
-var nameTest = function (id) {
+const nameTest = function (id) {
   return nameExp.test(id);
 };
 
 // addresses
 
-var cityTest = function (id) {
+const cityTest = function (id) {
   return cityExp.test(id);
 };
 
-var stateTest = function (id) {
+const stateTest = function (id) {
   return stateExp.test(id);
 };
 
-var zipTest = function (id) {
+const zipTest = function (id) {
   return zipExp.test(id);
 };
 
 // misc
 
-var numTest = function (id) {
+const numTest = function (id) {
   return numExp.test(id);
 };
 
-var twoDecTest = function (id) {
+const twoDecTest = function (id) {
   return twoDecExp.test(id);
 };
 
-var pwdTest = function (id) {
+const pwdTest = function (id) {
   return pwdExp.test(id);
 };
 
-var usernameTest = function (id) {
+const usernameTest = function (id) {
   return usernameExp.test(id);
 };
 
-var ssnTest = function (id) {
+const ssnTest = function (id) {
   return ssnExp.test(id);
 };
 
 // error message library
 
-// var required = "This field is required.";
+// const required = "This field is required.";
 
-// var header = "";
+// const header = "";
 
-// var html = "";
+// const html = "";
 
-// var requiredSpan = "<span>This field is required.<span>";
+// const requiredSpan = "<span>This field is required.<span>";
 
-// var requiredSpanEmail2 = "<span>This entry must equal first entry.<span>";
+// const requiredSpanEmail2 = "<span>This entry must equal first entry.<span>";
 
-// var msg = "Please review your entries and complete all required fields.";
+// const msg = "Please review your entries and complete all required fields.";
 
 // lastModified footer
 
@@ -123,11 +123,11 @@ var ssnTest = function (id) {
 // example: 12-Jan-99
 
 function date_ddmmmyy(date) {
-  var d = date.getDate();
+  let d = date.getDate();
 
-  var m = date.getMonth() + 1;
+  let m = date.getMonth() + 1;
 
-  var y = date.getYear();
+  let y = date.getYear();
 
   // handle different year values
   // returned by IE and NS in
@@ -145,7 +145,7 @@ function date_ddmmmyy(date) {
   // but the following method is
   // more compatible
 
-  var mmm =
+  const mmm =
     1 == m
       ? "Jan"
       : 2 == m
@@ -177,11 +177,11 @@ function date_ddmmmyy(date) {
 // current document.
 
 function date_lastmodified() {
-  var lmd = document.lastModified;
+  const lmd = document.lastModified;
 
-  var s = "Unknown";
+  let s = "Unknown";
 
-  var d1;
+  let d1;
 
   // check if we have a valid date
   // before proceeding
