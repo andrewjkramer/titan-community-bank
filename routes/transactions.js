@@ -8,14 +8,8 @@ const router = express.Router();
 
 const Transaction = require("../models/transaction");
 
-let transactionsX = "";
-
 // Define the function to get the transactions.
-function getTransactions(transactions) {
-  transactionsX = transactions;
-
-  return transactionsX;
-}
+const getTransactions = (transactions) => transactions;
 
 // Configure the handler for GET requests to /transactions.
 router.get("/", async (req, res) => {
