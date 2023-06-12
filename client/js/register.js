@@ -4,14 +4,8 @@
 
 //
 
-const register = function () {
-  let isValid = true;
-
+const register = () => {
   const required = "This field is required.";
-
-  let header = "";
-
-  // let html = "";
 
   const requiredSpan = "<span>This field is required.<span>";
 
@@ -19,23 +13,36 @@ const register = function () {
 
   const msg = "Please review your entries and complete all required fields.";
 
-  // get username values
+  let isValid = true;
+
+  let header = "";
+
+  // let html = "";
+
+  // get email address values
 
   let emailAddress = $("email_address").value.toLowerCase();
 
   let emailAddress1 = $("email_address1").value.toLowerCase();
 
+  // get username values
+
   let username1 = "";
 
   let user = "";
 
-  let emailX = emailAddress;
+  // get password values
+
+  let pwd = $("pwd").value;
+
+  let pwd1 = $("pwd1").value;
 
   ///////////////////////////////////////////////////////////////////////////////////////////////
+  // check if username already exists
+
+  let emailX = emailAddress;
 
   let userExist = JSON.parse(localStorage.getItem(emailX));
-
-  // check for if username already exists
 
   if ((emailX = userExist)) {
     alert("This account already exists, please login.");
@@ -46,13 +53,6 @@ const register = function () {
   }
 
   ///////////////////////////////////////////////////////////////////////////////////////////////
-
-  // get password values
-
-  let pwd = $("pwd").value;
-
-  let pwd1 = $("pwd1").value;
-
   // validate
 
   // emailAddress
@@ -145,13 +145,13 @@ const register = function () {
   }
 };
 
-const resetForms = function () {
+const resetForms = () => {
   resetForm();
 
   $("email_address").focus();
 };
 
-window.onload = function () {
+window.onload = () => {
   $("btnSubmit").onclick = register;
 
   $("reset_form").onclick = resetForms;

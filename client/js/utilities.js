@@ -6,13 +6,11 @@
 
 // getElementbyID function
 
-const $ = function (id) {
-  return document.getElementById(id);
-};
+const $ = (id) => document.getElementById(id);
 
 // resetForm function
 
-const resetForm = function () {
+const resetForm = () => {
   $("form").reset();
 
   const collection = document.getElementsByClassName("form_error");
@@ -59,49 +57,29 @@ const pwdExp = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
 
 // contact
 
-const emailTest = function (id) {
-  return emailExp.test(id);
-};
+const emailTest = (id) => emailExp.test(id);
 
-const nameTest = function (id) {
-  return nameExp.test(id);
-};
+const nameTest = (id) => nameExp.test(id);
 
 // addresses
 
-const cityTest = function (id) {
-  return cityExp.test(id);
-};
+const cityTest = (id) => cityExp.test(id);
 
-const stateTest = function (id) {
-  return stateExp.test(id);
-};
+const stateTest = (id) => stateExp.test(id);
 
-const zipTest = function (id) {
-  return zipExp.test(id);
-};
+const zipTest = (id) => zipExp.test(id);
 
 // misc
 
-const numTest = function (id) {
-  return numExp.test(id);
-};
+const numTest = (id) => numExp.test(id);
 
-const twoDecTest = function (id) {
-  return twoDecExp.test(id);
-};
+const twoDecTest = (id) => twoDecExp.test(id);
 
-const pwdTest = function (id) {
-  return pwdExp.test(id);
-};
+const pwdTest = (id) => pwdExp.test(id);
 
-const usernameTest = function (id) {
-  return usernameExp.test(id);
-};
+const usernameTest = (id) => usernameExp.test(id);
 
-const ssnTest = function (id) {
-  return ssnExp.test(id);
-};
+const ssnTest = (id) => ssnExp.test(id);
 
 // error message library
 
@@ -122,7 +100,7 @@ const ssnTest = function (id) {
 // format date as dd-mmm-yy
 // example: 12-Jan-99
 
-function date_ddmmmyy(date) {
+const date_ddmmmyy = (date) => {
   let d = date.getDate();
 
   let m = date.getMonth() + 1;
@@ -171,12 +149,12 @@ function date_ddmmmyy(date) {
       : "Dec";
 
   return "" + (d < 10 ? "0" + d : d) + "-" + mmm + "-" + (y < 10 ? "0" + y : y);
-}
+};
 
 // get last modified date of the
 // current document.
 
-function date_lastmodified() {
+const date_lastmodified = () => {
   const lmd = document.lastModified;
 
   let s = "Unknown";
@@ -191,7 +169,7 @@ function date_lastmodified() {
   }
 
   return s;
-}
+};
 
 // finally display the last modified date
 // as DD-MMM-YY

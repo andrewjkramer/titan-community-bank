@@ -32,7 +32,7 @@ class Transaction {
 
 let transactions = [];
 
-function displayTransactions(transactions) {
+const displayTransactions = (transactions) => {
   // let transactionsObj = transactions;
 
   $("transactionRows").innerHTML = transactions
@@ -55,11 +55,11 @@ function displayTransactions(transactions) {
         </tr>`
     )
     .join("");
-}
+};
 
 let availableBalance = 0;
 
-function displayAvailableBalance(transactions) {
+const displayAvailableBalance = (transactions) => {
   transactions.forEach(function (transaction) {
     // let transactionType = transaction.Type;
 
@@ -97,9 +97,9 @@ function displayAvailableBalance(transactions) {
       { minimumFractionDigits: 2, maximumFractionDigits: 2 }
     );
   }
-}
+};
 
-function withdrawal() {
+const withdrawal = () => {
   if (availableBalance <= 0.0) {
     alert("Unable to request a withdrawal due to zero or negative funds.");
 
@@ -196,9 +196,9 @@ function withdrawal() {
       xmlhttp.send();
     }
   }
-}
+};
 
-function deposit() {
+const deposit = () => {
   let depositAmount = parseFloat(
     prompt("How much would you like to deposit? ")
   );
@@ -296,9 +296,9 @@ function deposit() {
   xmlhttp.open("GET", "http://localhost:5000/transactions", true);
 
   xmlhttp.send();
-}
+};
 
-window.onload = function () {
+window.onload = () => {
   const xmlhttp = new XMLHttpRequest();
   let transactions;
 

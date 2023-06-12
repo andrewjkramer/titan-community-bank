@@ -20,7 +20,7 @@ const categories = [
   "Food & Drink",
 ];
 
-function renderChart(transactions) {
+const renderChart = (transactions) => {
   let categoryTotals = {};
   let i = 0;
   for (i = 0; i < categories.length; i++) {
@@ -75,9 +75,9 @@ function renderChart(transactions) {
       },
     },
   });
-}
+};
 
-window.onload = function () {
+window.onload = () => {
   const xmlhttp = new XMLHttpRequest();
 
   xmlhttp.onreadystatechange = function () {

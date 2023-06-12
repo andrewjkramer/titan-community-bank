@@ -15,7 +15,7 @@ const banner = [
   ["#", "./img/safedeposit.jpg"],
 ];
 
-function shuffle(a) {
+const shuffle = (a) => {
   let j, x, i;
 
   for (i = a.length - 1; i > 0; i--) {
@@ -26,7 +26,7 @@ function shuffle(a) {
   }
 
   return a;
-}
+};
 
 shuffle(banner);
 
@@ -50,18 +50,19 @@ document.getElementById("ad-container").appendChild(a);
 // const adContainer = document.getElementById("ad-container");
 // let currentBannerIndex = 0;
 
-// function changeBanner() {
-//   currentBannerIndex++;
-//   if (currentBannerIndex >= banner.length) {
-//     currentBannerIndex = 0;
-//   }
+// const changeBanner = () => {
+// currentBannerIndex++;
+// if (currentBannerIndex >= banner.length) {
+// currentBannerIndex = 0;
+// }
+// };
 
-//   let a = document.createElement("a");
+//   const a = document.createElement("a");
 //   a.href = banner[currentBannerIndex][0];
 //   a.target = "";
 //   a.rel = "nofollow";
 
-//   let img = document.createElement("img");
+//   const img = document.createElement("img");
 //   img.className = "ad-img";
 //   img.src = banner[currentBannerIndex][1];
 //   img.alt = "300x250 Banner Ad";

@@ -4,20 +4,20 @@
 
 //
 
-const login = function () {
-  let isValid = true;
-
+const login = () => {
   const required = "This field is required.";
+
+  let isValid = true;
 
   // get values
 
   let username = $("username").value.toLowerCase();
 
-  let pwd = $("pwd").value;
+  let username1 = "";
 
   let user = "";
 
-  let username1 = "";
+  let pwd = $("pwd").value;
 
   let pwd1 = "";
 
@@ -98,20 +98,20 @@ const login = function () {
   }
 };
 
-const resetForms = function () {
+const resetForms = () => {
   resetForm();
 
   $("username").focus();
 };
 
-window.onload = function () {
+window.onload = () => {
   $("btnSubmit").onclick = login;
 
   $("reset_form").onclick = resetForms;
 
   $("username").focus();
 
-  document.addEventListener("keydown", function (event) {
+  document.addEventListener("keydown", (event) => {
     if (event.code === "Enter" || event.code === "NumpadEnter") {
       login();
     }

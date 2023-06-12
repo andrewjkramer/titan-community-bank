@@ -4,12 +4,12 @@
 
 //
 
-const resetPW = function () {
-  let isValid = true;
-
+const resetPW = () => {
   const required = "This field is required.";
 
   const required2 = "This entry must equal first entry.";
+
+  let isValid = true;
 
   // get values
 
@@ -48,19 +48,15 @@ const resetPW = function () {
   }
 
   // current password
-
   // if (pwd == "") {
   //   $("pwd_error").firstChild.nodeValue = required;
-
   //   isValid = false;
   // } else if ((user = JSON.parse(localStorage.getItem(username)))) {
   //   if (user["username1"] == null) {
   //     $("pwd_error").firstChild.nodeValue = required;
-
   //     isValid = false;
   //   } else {
   //      pwd1 = user["pwd1"];
-
   //     $("pwd_error").firstChild.nodeValue = "";
   //   }
   // }
@@ -98,14 +94,11 @@ const resetPW = function () {
   }
 
   // current Pwd
-
   // if (pwdTest(pwd) == false) {
   //   $("pwd_error").firstChild.nodeValue = required;
-
   //   isValid = false;
   // } else if (pwd != pwd1) {
   //   $("pwd_error").firstChild.nodeValue = "This password does not match.";
-
   //   isValid = false;
   // } else {
   //   $("pwd_error").firstChild.nodeValue = "";
@@ -153,13 +146,13 @@ const resetPW = function () {
   }
 };
 
-const resetForms = function () {
+const resetForms = () => {
   resetForm();
 
   $("username").focus();
 };
 
-window.onload = function () {
+window.onload = () => {
   $("btnSubmit").onclick = resetPW;
 
   $("reset_form").onclick = resetForms;

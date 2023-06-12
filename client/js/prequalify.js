@@ -4,20 +4,20 @@
 
 //
 
-const prequalify = function () {
-  let isValid = true;
-
+const prequalify = () => {
   const required = "This field is required.";
-
-  let header = "";
-
-  // let html = "";
 
   const requiredSpan = "<span>This field is required.<span>";
 
   const requiredSpan2 = "<span>This entry must equal first entry.<span>";
 
   const msg = "Please review your entries and complete all required fields.";
+
+  let isValid = true;
+
+  let header = "";
+
+  // let html = "";
 
   // get values
 
@@ -214,13 +214,13 @@ const prequalify = function () {
   }
 };
 
-const resetForms = function () {
+const resetForms = () => {
   resetForm();
 
   $("first_name").focus();
 };
 
-window.onload = function () {
+window.onload = () => {
   $("btnSubmit").onclick = prequalify;
 
   $("reset_form").onclick = resetForms;
