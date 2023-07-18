@@ -5,7 +5,7 @@ Features:
 
 - Login/logout via LocalStorage
 - Regex form validation/data sanitization
-- Storage of transaction data via MongoDB  
+- Storage of transaction data via MongoDB
 - Real-time updating transaction list/balance info/Chart.js via AJAX API calls to Express server
 
 Future improvements:
@@ -15,9 +15,9 @@ Future improvements:
 
 Local installation:
 
-1. Insert your MongoDB URI key into app/server.js line 31  
-2. Terminal: npm install  
-3. Terminal: npm start  
+1. Insert your MongoDB URI key into app/server.js line 31
+2. Terminal: npm install
+3. Terminal: npm start
 
 Live URL:
 
