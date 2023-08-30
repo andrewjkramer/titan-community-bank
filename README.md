@@ -19,6 +19,10 @@ Local installation:
 2. Terminal: npm install
 3. Terminal: npm start
 
+Checkout the pnpm-test branch which uses the pnpm package manager rather than npm:
+
+https://github.com/andrewjkramer/titan-community-bank/tree/pnpm-test
+
 Live URL:
 
 https://titancommunitybank.herokuapp.com/
