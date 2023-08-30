@@ -15,7 +15,7 @@ Future improvements:
 
 Local installation:
 
-0. need to install pnpm on your OS.... 
+0. need to install pnpm on your OS... 
 
 "https://pnpm.io/installation"
 
@@ -27,7 +27,7 @@ This command worked for me:
 
 "iwr https://get.pnpm.io/install.ps1 -useb | iex"
 
-Ran this command in admin level powershell at some point before, may need to do the same:
+Ran this command in admin-level PowerShell at some point before, and may need to do the same:
 
 "set-ExecutionPolicy RemoteSigned -Scope CurrentUser unrestricted"
 
