@@ -4,6 +4,7 @@
   "description": "Titan Community Bank",
   "main": "server.js",
   "scripts": {
+    "preinstall": "npx only-allow pnpm", 
     "start": "node app/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

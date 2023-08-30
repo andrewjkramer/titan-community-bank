@@ -15,10 +15,31 @@ Future improvements:
 
 Local installation:
 
-1. Insert your MongoDB URI key into app/server.js line 31
-2. Terminal: npm install
-3. Terminal: npm start
+0. need to install pnpm on your OS.... 
 
-Live URL:
+"https://pnpm.io/installation"
+
+or for Windows
+
+"https://stackoverflow.com/questions/75365692/how-to-install-pnpm-on-windows"
+
+This command worked for me:
+
+"iwr https://get.pnpm.io/install.ps1 -useb | iex"
+
+Ran this command in admin level powershell at some point before, may need to do the same:
+
+"set-ExecutionPolicy RemoteSigned -Scope CurrentUser unrestricted"
+
+
+1. Insert your MongoDB URI key into app/server.js line 31
+2. Terminal: pnpm import
+3. Terminal: pnpm install
+
+See this if you have issues:
+
+"https://dev.to/andreychernykh/yarn-npm-to-pnpm-migration-guide-2n04"
+
+Live URL (not using pnpm yet):
 
 https://titancommunitybank.herokuapp.com/
