@@ -15,11 +15,11 @@ Future improvements:
 
 Local installation:
 
-0. need to install pnpm on your OS... 
+0. need to install pnpm on your OS... via npm or other methods:
 
 "https://pnpm.io/installation"
 
-or for Windows
+or for Windows (will need to uninstall Node.js first, this version is to use it as an exe which will allow you to use it as a nvm replacement to manage Node.js versions...)
 
 "https://stackoverflow.com/questions/75365692/how-to-install-pnpm-on-windows"
 
@@ -30,6 +30,10 @@ This command worked for me:
 Ran this command in admin-level PowerShell at some point before, and may need to do the same:
 
 "set-ExecutionPolicy RemoteSigned -Scope CurrentUser unrestricted"
+
+May also need to run:
+
+"pnpm setup" so it sets the central store path.
 
 
 1. Insert your MongoDB URI key into app/server.js line 31
