@@ -37,8 +37,9 @@ May also need to run:
 
 
 1. Insert your MongoDB URI key into app/server.js line 31
-2. Terminal: pnpm import (Only necessary if you already previously installed with npm - this command uses the package-lock.json file.)
-3. Terminal: pnpm install 
+2.0 Terminal: npx npkill (Only necessary if you already previously installed with npm - deletes node_modules to convert to symbolic link pnpm version)
+2.1 Terminal: pnpm import (Only necessary if you already previously installed with npm - this command uses the package-lock.json file.)
+3. Terminal:  pnpm install 
 4. Terminal: pnpm start
 5. Browser: http://localhost:5000/
 
