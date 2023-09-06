@@ -33,12 +33,14 @@ Ran this command in admin-level PowerShell at some point before, and may need to
 
 May also need to run:
 
-"pnpm setup" so it sets the central store path.
+"pnpm setup" so it sets the central package store path.
 
 
 1. Insert your MongoDB URI key into app/server.js line 31
-2. Terminal: pnpm import
-3. Terminal: pnpm install
+*2. Terminal: pnpm import (Only necessary if you already previously installed with npm - this command uses the package-lock.json file.)
+3. Terminal: pnpm install 
+4. Terminal: pnpm start
+5. Browser: http://localhost:5000/
 
 See this if you have issues:
 
