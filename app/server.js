@@ -29,14 +29,14 @@ const mongoose = require("mongoose");
 
 // Establish the port for the server to listen for requests.
 // Currently configured per Heroku specs.
-const port = app.listen(process.env.PORT || 5000);
 
-// const port = 5000;
+const port = process.env.PORT || 5000;
 
 // Establish the MongoDB URI const to connect to MongoDB.
 const dbURI = // ******************** your MongoDB URI goes here ********************
+
   // Setup the MongoDB connection with the Mongoose schema.
-  mongoose
+    mongoose
     .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 
     .then((result) => console.log("\n\nConnected to db.\n\n"))
@@ -44,11 +44,15 @@ const dbURI = // ******************** your MongoDB URI goes here ***************
     .then((result) => app.listen(port))
 
     .then((result) =>
-      console.log(`The server has started and is listening on port number: 
-
-                ${port}\n\n`)
+      console.log(`The server has started and is listening on port number:\n
+                ${port}`)
     )
-
+    
+    .then((result) =>
+      console.log(` 
+                http://localhost:${port}    <- CTRL + click to open in browser.\n\n`)
+    )
+    
     .catch((err) => console.log(err));
 
 // Establish the transactions const for the API route.
