@@ -15,13 +15,15 @@ Future improvements:
 
 Local installation:
 
-1. Insert your MongoDB URI key into the .env.example file, uncomment related code in server.js (lines 10-14).
+Doesn't apply to development branch: <!-- 1. Insert your MongoDB URI key into the .env.example file, uncomment related code in server.js (lines 10-14). -->
+1. Insert your MongoDB URI key into the .env.example file.
 2. Terminal: npm install
 3. Terminal: npm start
 
 Local installation using Docker:
 
-1. Insert your MongoDB URI key into the .env.example file, uncomment related code in server.js (lines 10-14).
+Doesn't apply to development branch: <!-- 1. Insert your MongoDB URI key into the .env.example file, uncomment related code in server.js (lines 10-14). -->
+1. Insert your MongoDB URI key into the .env.example file.
 2. Start Docker engine.
 3. CLI: docker build -t titancbank .
 4. CLI: docker run -p 5000:5000 -d titancbank
