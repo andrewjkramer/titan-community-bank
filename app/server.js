@@ -8,6 +8,7 @@ const path = require("path");
       // dotenv Configuration for local development.
 
               const dotenv = require('dotenv');
+              // const dotenvResult = dotenv.config({ path: path.resolve(__dirname, '../.env.example') });
               const dotenvResult = dotenv.config({ path: path.resolve(__dirname, '../.env') });
               if (dotenvResult.error) {
                 throw dotenvResult.error;

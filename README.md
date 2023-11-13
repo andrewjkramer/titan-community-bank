@@ -17,16 +17,19 @@ Local installation:
 
 Doesn't apply to development branch: <!-- 1. Insert your MongoDB URI key into the .env.example file, uncomment related code in server.js (lines 10-14). -->
 1. Insert your MongoDB URI key into the .env.example file.
-2. Terminal: npm install
-3. Terminal: npm start
+2. Uncomment out line 11 in server.js, comment out line 12.
+3. Update line 11 in server.js to read : const dotenvResult = dotenv.config({ path: path.resolve(__dirname, '../.env.example') });
+4. Terminal: npm install
+5. Terminal: npm start
 
 Local installation using Docker:
 
 Doesn't apply to development branch: <!-- 1. Insert your MongoDB URI key into the .env.example file, uncomment related code in server.js (lines 10-14). -->
 1. Insert your MongoDB URI key into the .env.example file.
-2. Start Docker engine.
-3. CLI: docker build -t titancbank .
-4. CLI: docker run -p 5000:5000 -d titancbank
+2. Uncomment out line 11 in server.js, comment out line 12.
+3. Start Docker engine.
+4. CLI: docker build -t titancbank .
+5. CLI: docker run -p 5000:5000 -d titancbank
 
 Checkout the pnpm-test branch which uses the pnpm package manager rather than npm:
 
