@@ -36,7 +36,7 @@ May also need to run:
 "pnpm setup" so it sets the central package store path.
 
 
-1. Insert your MongoDB URI key into app/server.js line 31
+1. Insert your MongoDB URI key into the .env.example file, uncomment related code in server.js (lines 10-14)
 2.0 Terminal: npx npkill (Only necessary if you already previously installed with npm - deletes node_modules to convert to symbolic link pnpm version)
 2.1 Terminal: pnpm import (Only necessary if you already previously installed with npm - this command uses the package-lock.json file.)
 3. Terminal:  pnpm install 
@@ -47,6 +47,6 @@ See this if you have issues:
 
 "https://dev.to/andreychernykh/yarn-npm-to-pnpm-migration-guide-2n04"
 
-Live URL (not using pnpm yet):
+Live URL (not using pnpm.. yet):
 
 https://titancommunitybank.herokuapp.com/
