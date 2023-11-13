@@ -160,12 +160,14 @@ const withdrawal = () => {
 
       let xmlhttp = new XMLHttpRequest();
 
-      // xmlhttp.open(
-      //   "POST",
-      //   "https://titancommunitybank.herokuapp.com/transactions",
-      //   true
-      // );
-      xmlhttp.open("POST", "http://localhost:5000/transactions", true);
+      // Check if the application is running on localhost
+      if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+        // If running locally, use the local URL
+        xmlhttp.open("POST", "http://localhost:5000/transactions", true);
+      } else {
+        // If running on Heroku or another live environment, use the Heroku URL
+        xmlhttp.open("POST", "https://titancommunitybank.herokuapp.com/transactions", true);
+      }
 
       xmlhttp.setRequestHeader(
         "Content-Type",
@@ -186,12 +188,14 @@ const withdrawal = () => {
         }
       };
 
-      // xmlhttp.open(
-      //   "GET",
-      //   "https://titancommunitybank.herokuapp.com/transactions",
-      //   true
-      // );
-      xmlhttp.open("GET", "http://localhost:5000/transactions", true);
+      // Check if the application is running on localhost
+      if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+        // If running locally, use the local URL for the GET request
+        xmlhttp.open("GET", "http://localhost:5000/transactions", true);
+      } else {
+        // If running on Heroku or another live environment, use the Heroku URL for the GET request
+        xmlhttp.open("GET", "https://titancommunitybank.herokuapp.com/transactions", true);
+      }
 
       xmlhttp.send();
     }
@@ -265,12 +269,14 @@ const deposit = () => {
 
   let xmlhttp = new XMLHttpRequest();
 
-  // xmlhttp.open(
-  //   "POST",
-  //   "https://titancommunitybank.herokuapp.com/transactions",
-  //   true
-  // );
-  xmlhttp.open("POST", "http://localhost:5000/transactions", true);
+  // Check if the application is running on localhost
+  if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+    // If running locally, use the local URL for the POST request
+    xmlhttp.open("POST", "http://localhost:5000/transactions", true);
+  } else {
+    // If running on Heroku or another live environment, use the Heroku URL for the POST request
+    xmlhttp.open("POST", "https://titancommunitybank.herokuapp.com/transactions", true);
+  }
 
   xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
@@ -288,12 +294,14 @@ const deposit = () => {
     }
   };
 
-  // xmlhttp.open(
-  //   "GET",
-  //   "https://titancommunitybank.herokuapp.com/transactions",
-  //   true
-  // );
-  xmlhttp.open("GET", "http://localhost:5000/transactions", true);
+    // Check if the application is running on localhost
+    if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+      // If running locally, use the local URL for the GET request
+      xmlhttp.open("GET", "http://localhost:5000/transactions", true);
+    } else {
+      // If running on Heroku or another live environment, use the Heroku URL for the GET request
+      xmlhttp.open("GET", "https://titancommunitybank.herokuapp.com/transactions", true);
+    }
 
   xmlhttp.send();
 };
@@ -311,13 +319,14 @@ window.onload = () => {
       displayAvailableBalance(transactions);
     }
   };
-
-  // xmlhttp.open(
-  //   "GET",
-  //   "https://titancommunitybank.herokuapp.com/transactions",
-  //   true
-  // );
-  xmlhttp.open("GET", "http://localhost:5000/transactions", true);
+  
+  if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+    // If running locally, use the local URL for the GET request
+    xmlhttp.open("GET", "http://localhost:5000/transactions", true);
+  } else {
+    // If running on Heroku or another live environment, use the Heroku URL for the GET request
+    xmlhttp.open("GET", "https://titancommunitybank.herokuapp.com/transactions", true);
+  }
 
   xmlhttp.send();
 
