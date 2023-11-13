@@ -3,57 +3,62 @@
 // Import the required modules.
 
 const express = require("express");
-
 const path = require("path");
 
-const app = express();
+      // dotenv Configuration for local development.
 
+              // const dotenv = require('dotenv');
+              // const dotenvResult = dotenv.config({ path: path.resolve(__dirname, '../.env') });
+              // if (dotenvResult.error) {
+              //   throw dotenvResult.error;
+              // }
+
+// Constants and Variables
+const app = express();
 const mongoose = require("mongoose");
 
-// CORS was enabled for API development purposes before merging the front end with the back end.
-// It is not currently being used.
+      // CORS was enabled for API development purposes before merging the front end with the back end.
+      // It is not currently being used.
 
-// const cors = require("cors");
+              // const cors = require("cors");
 
-// Define the middleware for the CORS policy. Set the origin to "*" to allow all origin requests.
-// Currently set to allow all requests for development purposes.
+              // Define the middleware for the CORS policy. Set the origin to "*" to allow all origin requests.
+              // Currently set to allow all requests for development purposes.
 
-// const corsOptions = {
-//   origin: "*", // -- to discover the origin you need, disable this and run the app, then check the devtools console for the origin that was blocked.
-//   // credentials: true, //access-control-allow-credentials:true
-//   optionSuccessStatus: 200,
-// };
+              // const corsOptions = {
+              //   origin: "*", // -- to discover the origin you need, disable this and run the app, then check the devtools console for the origin that was blocked.
+              //   // credentials: true, //access-control-allow-credentials:true
+              //   optionSuccessStatus: 200,
+              // };
 
-// Define the middleware for the CORS policy.
-// app.use(cors(corsOptions)); // Use this after the variable declaration
+              // Define the middleware for the CORS policy.
+              // app.use(cors(corsOptions)); // Use this after the variable declaration
 
 // Establish the port for the server to listen for requests.
 // Currently configured per Heroku specs.
-
 const port = process.env.PORT || 5000;
 
 // Establish the MongoDB URI const to connect to MongoDB.
-const dbURI = // ******************** your MongoDB URI goes here ********************
+const dbURI = process.env.MONGODB_URI;
 
-  // Setup the MongoDB connection with the Mongoose schema.
-    mongoose
-    .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+// Explicitly set 'strictQuery' to suppress deprecation warning.
+mongoose.set('strictQuery', false);
 
-    .then((result) => console.log("\n\nConnected to db.\n\n"))
+// Setup the MongoDB connection with the Mongoose schema.
+mongoose
+  .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 
-    .then((result) => app.listen(port))
+  .then((result) => console.log("\n\nConnected to db.\n\n"))
 
-    .then((result) =>
-      console.log(`The server has started and is listening on port number:\n
-                ${port}`)
-    )
-    
-    .then((result) =>
-      console.log(` 
-                http://localhost:${port}    <- CTRL + click to open in browser.\n\n`)
-    )
-    
-    .catch((err) => console.log(err));
+  .then((result) => app.listen(port))
+
+  .then((result) =>
+    console.log(`The server has started and is listening on port number: 
+
+                ${port}\n\n`)
+  )
+
+  .catch((err) => console.log(err));
 
 // Establish the transactions const for the API route.
 const transactions = require("../routes/transactions");
