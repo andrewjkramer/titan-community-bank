@@ -15,8 +15,8 @@ Future improvements:
 
 Local installation:
 
-Doesn't apply to development branch: <!-- 1. Insert your MongoDB URI key into the .env.example file, uncomment related code in server.js (lines 10-14). -->
-1. Insert your MongoDB URI key into the .env.example file.
+1. Production branch: Insert your MongoDB URI key into the .env.example file, uncomment related code in server.js (lines 10-14).
+1. Development branch: Insert your MongoDB URI key into the .env.example file.
 2. Uncomment out line 11 in server.js, comment out line 12.
 3. Update line 11 in server.js to read : const dotenvResult = dotenv.config({ path: path.resolve(__dirname, '../.env.example') });
 4. Terminal: npm install
@@ -24,8 +24,8 @@ Doesn't apply to development branch: <!-- 1. Insert your MongoDB URI key into th
 
 Local installation using Docker:
 
-Doesn't apply to development branch: <!-- 1. Insert your MongoDB URI key into the .env.example file, uncomment related code in server.js (lines 10-14). -->
-1. Insert your MongoDB URI key into the .env.example file.
+1. Production branch: Insert your MongoDB URI key into the .env.example file, uncomment related code in server.js (lines 10-14).
+1. Development branch: Insert your MongoDB URI key into the .env.example file.
 2. Uncomment out line 11 in server.js, comment out line 12.
 3. Start Docker engine.
 4. CLI: docker build -t titancbank .
