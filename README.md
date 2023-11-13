@@ -15,7 +15,7 @@ Future improvements:
 
 Local installation:
 
-1. Insert your MongoDB URI key into app/server.js line 31
+1. Insert your MongoDB URI key into the .env.example file, uncomment related code in server.js
 2. Terminal: npm install
 3. Terminal: npm start
 
