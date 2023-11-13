@@ -19,6 +19,13 @@ Local installation:
 2. Terminal: npm install
 3. Terminal: npm start
 
+Local installation using Docker:
+
+1. Insert your MongoDB URI key into the .env.example file, uncomment related code in server.js (lines 10-14).
+2. Start Docker engine.
+3. CLI: docker build -t titancbank .
+4. CLI: docker run -p 5000:5000 -d titancbank
+
 Checkout the pnpm-test branch which uses the pnpm package manager rather than npm:
 
 https://github.com/andrewjkramer/titan-community-bank/tree/pnpm-test
