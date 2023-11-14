@@ -15,21 +15,18 @@ Future improvements:
 
 Local installation:
 
-1. Production branch: Insert your MongoDB URI key into the .env.example file, uncomment related code in server.js (lines 10-14).
-1. Development branch: Insert your MongoDB URI key into the .env.example file.
-2. Uncomment out line 11 in server.js, comment out line 12.
-3. Update line 11 in server.js to read : const dotenvResult = dotenv.config({ path: path.resolve(__dirname, '../.env.example') });
-4. Terminal: npm install
-5. Terminal: npm start
+1. Insert your MongoDB URI key into the .env.example file.
+2. Uncomment line 11 in server.js, comment out line 12.
+3. Terminal: npm install
+4. Terminal: npm start
 
 Local installation using Docker:
 
-1. Production branch: Insert your MongoDB URI key into the .env.example file, uncomment related code in server.js (lines 10-14).
-1. Development branch: Insert your MongoDB URI key into the .env.example file.
-2. Uncomment out line 11 in server.js, comment out line 12.
-3. Start Docker engine.
-4. CLI: docker build -t titancbank .
-5. CLI: docker run -p 5000:5000 -d titancbank
+1. Insert your MongoDB URI key into the .env.example file.
+2. Uncomment line 11 in server.js, comment out line 12.
+3. Uncomment line 10 in docker-compose.yml, comment out line 11.
+4. Start Docker engine.
+5. CLI: docker-compose up
 
 Checkout the pnpm-test branch which uses the pnpm package manager rather than npm:
 
