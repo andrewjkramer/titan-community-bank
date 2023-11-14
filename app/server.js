@@ -1,18 +1,28 @@
 "use strict";
 
 // Import the required modules.
-
 const express = require("express");
 const path = require("path");
+const fs = require("fs");
 
-      // dotenv Configuration for local development.
+// dotenv Configuration for local development.
+const dotenv = require('dotenv');
+const envPath = path.resolve(__dirname, '../.env');
+const exampleEnvPath = path.resolve(__dirname, '../.env.example');
 
-              const dotenv = require('dotenv');
-              // const dotenvResult = dotenv.config({ path: path.resolve(__dirname, '../.env.example') });
-              const dotenvResult = dotenv.config({ path: path.resolve(__dirname, '../.env') });
-              if (dotenvResult.error) {
-                throw dotenvResult.error;
-              }
+// Check if the .env file exists and load it
+if (fs.existsSync(envPath)) {
+    dotenv.config({ path: envPath });
+    console.log('Using values from .env');
+} else if (fs.existsSync(exampleEnvPath)) {
+    // .env file doesn't exist, check if .env.example file exists and load it
+    dotenv.config({ path: exampleEnvPath });
+    console.log('Using values from .env.example');
+} else {
+    // No .env or .env.example files found
+    console.error('No .env or .env.example files found. Please create at least one of them.');
+    process.exit(1);
+}
 
 // Constants and Variables
 const app = express();
