@@ -87,11 +87,20 @@ window.onload = () => {
       renderChart(transactions);
     }
   };
-  // xmlhttp.open(
-  //   "GET",
-  //   "https://titancommunitybank.herokuapp.com/transactions",
-  //   true
-  // );
-  xmlhttp.open("GET", "http://localhost:5000/transactions", true);
+  
+  if (
+    window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1"
+  ) {
+    // If running locally, use the local URL for the GET request
+    xmlhttp.open("GET", "http://localhost:5000/transactions", true);
+  } else {
+    // If running on Heroku or another live environment, use the Heroku URL for the GET request
+    xmlhttp.open(
+      "GET",
+      "https://titancommunitybank.herokuapp.com/transactions",
+      true
+    );
+  }
   xmlhttp.send();
 };
