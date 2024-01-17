@@ -30,21 +30,36 @@ router.get("/", async (req, res) => {
 
 // Configure the handler for POST requests to /transactions.
 router.post("/", async (req, res) => {
-  const transaction = new Transaction({
-    Date: req.body.Date,
+  try {
+    const requiredParams = [
+      "Date",
+      "Description",
+      "Category",
+      "Type",
+      "Amount",
+    ];
 
-    Description: req.body.Description,
+    for (const param of requiredParams) {
+      if (!req.body[param]) {
+        return res.status(400).json({ error: `${param} is required` });
+      }
+    }
 
-    Category: req.body.Category,
+    const transaction = new Transaction({
+      Date: req.body.Date,
+      Description: req.body.Description,
+      Category: req.body.Category,
+      Type: req.body.Type,
+      Amount: req.body.Amount,
+    });
 
-    Type: req.body.Type,
+    await transaction.save();
 
-    Amount: req.body.Amount,
-  });
-
-  await transaction.save();
-
-  res.send(transaction);
+    res.status(201).json(transaction);
+  } catch (error) {
+    console.error("Error creating transaction:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
 });
 
 // Configure the handler for DEL requests to /transactions/:id.
